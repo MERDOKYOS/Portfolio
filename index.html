@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Merde's Portfolio</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/png" href="images\favicon.png" />
+    <!-- Main CSS File -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body class="index-page">
+    <header id="header" class="header">
+      <div class="container">
+        <a href="index.html" class="logo"><h1 class="sitename">MERDE</h1></a>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav id="navMenu" class="navMenu">
+          <ul>
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#project">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <img src="images\merde.png" class="hero-image" data-aos="fade-in" />
+      <div class="overlay"></div>
+      <div class="hero-text">
+        <h2>I am Merdokyos Semeneh</h2>
+        <p>
+          <span class="typed" data-typed-items="Designer, Developer"></span>
+        </p>
+      </div>
+    </section>
+    <!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="about-container">
+        <div class="about-left">
+          <h1>About Me</h1>
+          <h3>MERDOKYOS SEMENEH</h3>
+          <p>
+            I’m a developer and designer creating clean, user-focused digital
+            experiences. I specialize in web design, development, and graphic
+            design. I thrive on tech trends, sketching ideas, and
+            strategy-driven creativity. I enjoy turning concepts into visually
+            engaging, functional designs that connect with users and solve real
+            problems efficiently.
+          </p>
+        </div>
+        <div class="about-right">
+          <p><b> Skills</b></p>
+          <div class="tab-con">
+            <button onclick="clickTab(event,'front')" class="tabs front">
+              Frontend
+            </button>
+            <button onclick="clickTab(event,'back')" class="tabs active back">
+              Backend
+            </button>
+          </div>
+
+          <div id="front" class="skill-con fade">
+            <p>Languages</p>
+            <div class="skill-item">
+              <span>HTML/CSS</span>
+              <div class="progress"><div style="width: 90%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>JavaScript</span>
+              <div class="progress"><div style="width: 80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>React</span>
+              <div class="progress"><div style="width: 75%"></div></div>
+            </div>
+          </div>
+
+          <div id="back" class="skill-con active fade">
+            <h3>Languages</h3>
+            <div class="skill-item">
+              <span>PHP</span>
+              <div class="progress"><div style="width: 75%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>MySQL</span>
+              <div class="progress"><div style="width: 85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>Node.js</span>
+              <div class="progress"><div style="width: 85%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="service-container">
+        <h1 class="title">What I Offer</h1>
+      </div>
+
+      <!-- End Section Title -->
+      <div class="service-box">
+        <div class="service-item card">
+          <h3>Web Design</h3>
+          <img src="images\web design.png" alt="Web Design" />
+          <p>
+            I create modern, responsive websites that are visually appealing and
+            user-friendly. From layout to color scheme.
+          </p>
+        </div>
+
+        <!-- End Service Item -->
+
+        <div class="service-item card">
+          <h3>Website Development</h3>
+          <img src="images\web dev.png" alt="Web Development" />
+          <p>
+            I build fast, secure, and scalable websites using the latest
+            technologies.Whether it’s a portfolio, blog, or business site, I
+            focus on performance, functionality, and clean coding practices to
+            ensure long-term success.
+          </p>
+        </div>
+
+        <!-- End Service Item -->
+
+        <div class="service-item card">
+          <h3>Graphic Design</h3>
+          <img src="images\graphics design.png" alt="Graphics Design" />
+          <p>
+            From logos to banners, I design compelling visuals that capture
+            attention and communicate clearly. I blend creativity with strategy
+            to create designs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project -->
+    <section id="project">
+      <h1 class="title">Some Of Projects</h1>
+      <div class="pro-img-con">
+        <img src="images\second-image.jpg" alt="" />
+        <img src="images\second-image.jpg" alt="" />
+        <img src="images\second-image.jpg" alt="" />
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h1 class="title">Contact</h1>
+      <div id="container">
+        <div class="left">
+          <form action="">
+            <label for="name">Your Name:</label> <br />
+            <input type="text" placeholder="Name" /><br />
+            <label for="email">Your Email:</label><br />
+            <input type="email" placeholder="Email" /><br />
+            <label for="message">Your Message:</label><br />
+            <textarea type="text" row="4" placeholder="Message"></textarea
+            ><br />
+            <button class="btn" type="submit">Send Message</button>
+          </form>
+        </div>
+        <div class="right">
+          <h3>Get In Touch</h3>
+          <p>
+            Got a project in mind , I’m always excited to connect, share ideas,
+            and create together.
+          </p>
+          <div class="first">
+            <div class="item">
+              <div class="img-con">
+                <img
+                  width="25px"
+                  height="25px"
+                  src="https://img.icons8.com/ios-filled/50/000000/phone.png"
+                  alt="Phone Icon"
+                />
+              </div>
+
+              <div class="getin">
+                <h3>Call Me</h3>
+                <p>+251900901325</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="img-con">
+                <img width=25px" height="25px"
+                src="https://img.icons8.com/ios-filled/50/000000/new-post.png"
+                alt="Email Icon" />
+              </div>
+
+              <div class="getin">
+                <h3>Email Me</h3>
+                <p>
+                  <a
+                    href="mailto:surafelsm894@gmail.com?subject=Hello%20Merde&body=I%20saw%20your%20portfolio"
+                    >surafelsm894@gmail.com</a
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="img-con">
+                <img
+                  width="25px"
+                  height="25px"
+                  src="https://img.icons8.com/ios-filled/50/000000/marker.png"
+                  alt="Location Icon"
+                />
+              </div>
+              <div class="getin">
+                <h3>Address</h3>
+                <p>
+                  <a
+                    href="https://maps.app.goo.gl/urEMgnKLo8v9vDk76"
+                    target="_blank"
+                    >Bahirdar, saint george, poly</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          <h4>Follow Me On</h4>
+          <div class="social-icons">
+            <!-- Telegram -->
+            <a
+              href="https://t.me/MERDOKYOS_S"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg"
+                alt="Telegram"
+              />
+            </a>
+            <!-- GitHub -->
+            <a
+              href="https://github.com/MERDOKYOS/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg"
+                alt="GitHub"
+              />
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/in/merdokyos-sm-b76a8a341/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg"
+                alt="LinkedIn"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="copyright">
+        <p>
+          © <span>Copyright</span>
+          <strong class="sitename">MERDE</strong>
+          <span>All Rights Reserved</span>
+        </p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

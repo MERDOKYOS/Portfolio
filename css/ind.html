@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Finder</title>
+
+    <!-- =======================
+       BASIC STYLES (CSS)
+       ======================= -->
+    <style>
+      /* Reset default browser styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        color: #fff;
+        background-color: #000;
+      }
+
+      /* =======================
+       VIDEO BACKGROUND
+       ======================= */
+      .hero {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .hero video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures video fills screen */
+        filter: brightness(0.6); /* Darken video for text visibility */
+      }
+
+      /* Dark overlay for cinematic look */
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.45);
+      }
+
+      /* =======================
+       HERO CONTENT
+       ======================= */
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        animation: fadeIn 0.3s ease-in; /* 0.3s cinematic entry */
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        max-width: 700px;
+      }
+
+      /* =======================
+       SEARCH BOX
+       ======================= */
+      .search-box {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 12px;
+        padding: 20px;
+        width: 100%;
+        max-width: 900px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+      }
+
+      .search-box label {
+        color: #000;
+        font-size: 0.85rem;
+        margin-bottom: 4px;
+        display: block;
+      }
+
+      .search-box input,
+      .search-box select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 0.9rem;
+      }
+
+      .search-box button {
+        grid-column: 1 / -1; /* Button spans full width */
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: #111;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .search-box button:hover {
+        background: #333;
+      }
+
+      /* =======================
+       SERVICES CHECKBOXES
+       ======================= */
+      .services {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        grid-column: 1 / -1;
+      }
+
+      .services label {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.8rem;
+        color: #000;
+      }
+
+      /* =======================
+       RESPONSIVE TEXT
+       ======================= */
+      @media (max-width: 600px) {
+        .hero-content h1 {
+          font-size: 2.2rem;
+        }
+
+        .hero-content p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- =======================
+       HERO / LANDING SECTION
+       ======================= -->
+    <section class="hero">
+      <!-- Background video (replace video.mp4 with your own) -->
+      <video autoplay muted loop playsinline>
+        <source src="video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Dark overlay -->
+      <div class="overlay"></div>
+
+      <!-- Main content -->
+      <div class="hero-content">
+        <h1>Find Your Perfect Hotel</h1>
+        <p>
+          Search and compare hotels by quality, services, and location. Discover
+          the best stay that matches your standards.
+        </p>
+
+        <!-- =======================
+           SEARCH FORM
+           ======================= -->
+        <form class="search-box" id="hotelSearchForm">
+          <!-- Hotel type -->
+          <div>
+            <label for="hotelType">Hotel Standard</label>
+            <select id="hotelType">
+              <option value="">Any</option>
+              <option value="luxury">Luxury</option>
+              <option value="standard">Standard</option>
+              <option value="budget">Budget</option>
+            </select>
+          </div>
+
+          <!-- Location -->
+          <div>
+            <label for="location">City / Location</label>
+            <input type="text" id="location" placeholder="Enter city" />
+          </div>
+
+          <!-- Price range -->
+          <div>
+            <label for="price">Max Price (per night)</label>
+            <input type="number" id="price" placeholder="e.g. 150" />
+          </div>
+
+          <!-- Services -->
+          <div class="services">
+            <label><input type="checkbox" value="wifi" /> Free Wi-Fi</label>
+            <label><input type="checkbox" value="pool" /> Swimming Pool</label>
+            <label><input type="checkbox" value="parking" /> Parking</label>
+            <label><input type="checkbox" value="breakfast" /> Breakfast</label>
+            <label><input type="checkbox" value="gym" /> Gym</label>
+          </div>
+
+          <!-- Search button -->
+          <button type="submit">Search Hotels</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- =======================
+       JAVASCRIPT LOGIC
+       ======================= -->
+    <script>
+      // Handle form submission
+      document
+        .getElementById("hotelSearchForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Prevent page reload
+
+          // Collect form values
+          const hotelType = document.getElementById("hotelType").value;
+          const location = document.getElementById("location").value;
+          const price = document.getElementById("price").value;
+
+          // Get selected services
+          const services = Array.from(
+            document.querySelectorAll(".services input:checked")
+          ).map((service) => service.value);
+
+          // For now, just show the search data (later connect to backend)
+          console.log({
+            hotelType,
+            location,
+            price,
+            services,
+          });
+
+          alert("Search submitted! Check console for data.");
+        });
+    </script>
+  </body>
+</html>
