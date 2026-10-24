@@ -2,87 +2,149 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Merde's Portfolio</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merdokyos Semeneh — Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Merdokyos Semeneh is a Full Stack Developer and Designer based in Bahir Dar, Ethiopia, specializing in web design, development, and graphic design."
+    />
+    <meta
+      name="keywords"
+      content="Full Stack Developer, Web Developer, Web Designer, React, JavaScript, PHP, Node.js, Bahir Dar, Ethiopia, portfolio"
+    />
 
+    <!-- Open Graph (social sharing preview) -->
+    <meta property="og:title" content="Merdokyos Semeneh — Full Stack Developer" />
+    <meta
+      property="og:description"
+      content="Portfolio of Merdokyos Semeneh — Full Stack Developer and Designer based in Bahir Dar, Ethiopia."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Fonts: Ubuntu + Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="icon" type="image/png" href="images\favicon.png" />
-    <!-- Main CSS File -->
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <!-- Main CSS -->
     <link href="css/style.css" rel="stylesheet" />
   </head>
 
   <body class="index-page">
+    <!-- ===== HEADER / NAV ===== -->
     <header id="header" class="header">
       <div class="container">
-        <a href="index.html" class="logo"><h1 class="sitename">MERDE</h1></a>
-        <div class="hamburger" id="hamburger">
+        <a href="index.html" class="logo">
+          <h1 class="sitename">MERDE</h1>
+        </a>
+
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="navMenu"
+        >
           <span></span>
           <span></span>
           <span></span>
-        </div>
-        <nav id="navMenu" class="navMenu">
+        </button>
+
+        <nav id="navMenu" class="navMenu" aria-label="Main navigation">
           <ul>
-            <li><a href="#hero" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#project">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#hero"       class="nav-link active">Home</a></li>
+            <li><a href="#about"      class="nav-link">About</a></li>
+            <li><a href="#services"   class="nav-link">Services</a></li>
+            <li><a href="#project"    class="nav-link">Projects</a></li>
+            <li><a href="#education"  class="nav-link">Education</a></li>
+            <li><a href="#contact"    class="nav-link">Contact</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- ===== HERO SECTION ===== -->
     <section id="hero" class="hero">
-      <img src="images\merde.png" class="hero-image" data-aos="fade-in" />
-      <div class="overlay"></div>
-      <div class="hero-text">
-        <h2>I am Merdokyos Semeneh</h2>
-        <p>
-          <span class="typed" data-typed-items="Designer, Developer"></span>
-        </p>
+      <div class="hero-content">
+        <div class="hero-text" data-aos="fade-right" data-aos-duration="800">
+          <p class="hero-greeting">Hello, I'm</p>
+          <h2>Merdokyos Semeneh</h2>
+          <p class="hero-typed">
+            <span
+              class="typed"
+              data-typed-items="Full Stack Developer,Web Designer,Graphic Designer"
+            ></span>
+          </p>
+          <p class="hero-description">
+            <!-- I create clean, user-focused digital experiences that solve real problems
+            and connect with people. -->
+          </p>
+          <div class="hero-cta">
+            <a href="#project" class="btn btn-primary">View Projects</a>
+            <a href="assets/resume.pdf" class="btn btn-outline-light" download>
+              Download CV
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-photo" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+          <img
+            src="images/merde.png"
+            alt="Merdokyos Semeneh — Full Stack Developer"
+            onerror="this.onerror=null;this.src='https://via.placeholder.com/320x320/063d8a/ffffff?text=Your+Photo'"
+          />
+        </div>
       </div>
+
+      <div class="hero-scroll-hint" aria-hidden="true">&#8595;</div>
     </section>
     <!-- /Hero Section -->
 
-    <!-- About Section -->
-    <section id="about">
+    <!-- ===== ABOUT SECTION ===== -->
+    <section id="about" data-aos="fade-up">
       <div class="about-container">
         <div class="about-left">
           <h1>About Me</h1>
           <h3>MERDOKYOS SEMENEH</h3>
           <p>
-            I’m a developer and designer creating clean, user-focused digital
+            I'm a developer and designer creating clean, user-focused digital
             experiences. I specialize in web design, development, and graphic
             design. I thrive on tech trends, sketching ideas, and
             strategy-driven creativity. I enjoy turning concepts into visually
             engaging, functional designs that connect with users and solve real
             problems efficiently.
           </p>
+          <div class="about-links">
+            <a href="#contact" class="btn btn-primary btn-sm">Get In Touch</a>
+            <a
+              href="https://github.com/MERDOKYOS/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-outline btn-sm"
+            >GitHub Profile</a>
+          </div>
         </div>
-        <div class="about-right">
-          <p><b> Skills</b></p>
+
+        <div class="about-right" data-aos="fade-left" data-aos-delay="150">
+          <p><b>Skills</b></p>
           <div class="tab-con">
-            <button onclick="clickTab(event,'front')" class="tabs front">
-              Frontend
-            </button>
-            <button onclick="clickTab(event,'back')" class="tabs active back">
-              Backend
-            </button>
+            <button onclick="clickTab(event,'front')" class="tabs active">Frontend</button>
+            <button onclick="clickTab(event,'back')"  class="tabs">Backend</button>
           </div>
 
-          <div id="front" class="skill-con fade">
-            <p>Languages</p>
+          <div id="front" class="skill-con active fade">
+            <p>Languages &amp; Frameworks</p>
             <div class="skill-item">
-              <span>HTML/CSS</span>
+              <span>HTML / CSS</span>
               <div class="progress"><div style="width: 90%"></div></div>
             </div>
             <div class="skill-item">
@@ -95,8 +157,8 @@
             </div>
           </div>
 
-          <div id="back" class="skill-con active fade">
-            <h3>Languages</h3>
+          <div id="back" class="skill-con fade">
+            <p>Languages &amp; Tools</p>
             <div class="skill-item">
               <span>PHP</span>
               <div class="progress"><div style="width: 75%"></div></div>
@@ -113,122 +175,307 @@
         </div>
       </div>
     </section>
+    <!-- /About Section -->
 
-    <section id="services" class="services">
-      <div class="service-container">
+    <!-- ===== SERVICES SECTION ===== -->
+    <section id="services" class="services" data-aos="fade-up">
+      <div class="section-header">
         <h1 class="title">What I Offer</h1>
+        <p class="section-subtitle">Services I provide to help build your digital presence</p>
       </div>
 
-      <!-- End Section Title -->
       <div class="service-box">
-        <div class="service-item card">
+        <div class="service-item card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon" aria-hidden="true">🎨</div>
           <h3>Web Design</h3>
-          <img src="images\web design.png" alt="Web Design" />
           <p>
             I create modern, responsive websites that are visually appealing and
-            user-friendly. From layout to color scheme.
+            user-friendly. From layout to color scheme, every detail is
+            purposefully crafted.
           </p>
         </div>
 
-        <!-- End Service Item -->
-
-        <div class="service-item card">
+        <div class="service-item card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-icon" aria-hidden="true">💻</div>
           <h3>Website Development</h3>
-          <img src="images\web dev.png" alt="Web Development" />
           <p>
             I build fast, secure, and scalable websites using the latest
-            technologies.Whether it’s a portfolio, blog, or business site, I
-            focus on performance, functionality, and clean coding practices to
-            ensure long-term success.
+            technologies. Whether it's a portfolio, blog, or business site, I
+            focus on performance, functionality, and clean coding practices.
           </p>
         </div>
 
-        <!-- End Service Item -->
-
-        <div class="service-item card">
+        <div class="service-item card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon" aria-hidden="true">🖼️</div>
           <h3>Graphic Design</h3>
-          <img src="images\graphics design.png" alt="Graphics Design" />
           <p>
             From logos to banners, I design compelling visuals that capture
             attention and communicate clearly. I blend creativity with strategy
-            to create designs.
+            to create designs that resonate with your audience.
           </p>
         </div>
       </div>
     </section>
+    <!-- /Services Section -->
 
-    <!-- Project -->
-    <section id="project">
-      <h1 class="title">Some Of Projects</h1>
-      <div class="pro-img-con">
-        <img src="images\second-image.jpg" alt="" />
-        <img src="images\second-image.jpg" alt="" />
-        <img src="images\second-image.jpg" alt="" />
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section id="project" data-aos="fade-up">
+      <div class="section-header">
+        <h1 class="title">Featured Projects</h1>
+        <p class="section-subtitle">A selection of work I've built and am proud of</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: Hotel Finder (real project) -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-img-wrap">
+            <img
+              src="images/project1.png"
+              alt="Hotel Finder application screenshot"
+              onerror="this.onerror=null;this.src='https://via.placeholder.com/600x360/1a2a4a/ffffff?text=Hotel+Finder'"
+            />
+            <div class="project-overlay">
+              <a href="css/ind.html" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-white">Live Demo</a>
+              <a href="https://github.com/MERDOKYOS/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-white">GitHub</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Hotel Finder</h3>
+            <p>
+              A search interface for finding and comparing hotels by quality, services,
+              and location. Features a cinematic video hero, advanced search filters,
+              and a clean, accessible layout.
+            </p>
+            <div class="tech-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Placeholder -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-img-wrap">
+            <img
+              src="images/project2.png"
+              alt="Project 2 screenshot"
+              onerror="this.onerror=null;this.src='https://via.placeholder.com/600x360/063d8a/ffffff?text=Your+Project'"
+            />
+            <div class="project-overlay">
+              <a href="#" class="btn btn-sm btn-white">Live Demo</a>
+              <a href="https://github.com/MERDOKYOS/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-white">GitHub</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Project Title</h3>
+            <p>
+              Brief description of what this project does, the problem it solves,
+              and who it's for. Replace this placeholder with your real project details.
+            </p>
+            <div class="tech-tags">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Placeholder -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-img-wrap">
+            <img
+              src="images/project3.png"
+              alt="Project 3 screenshot"
+              onerror="this.onerror=null;this.src='https://via.placeholder.com/600x360/747070/ffffff?text=Your+Project'"
+            />
+            <div class="project-overlay">
+              <a href="#" class="btn btn-sm btn-white">Live Demo</a>
+              <a href="https://github.com/MERDOKYOS/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-white">GitHub</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Project Title</h3>
+            <p>
+              Brief description of what this project does, the problem it solves,
+              and who it's for. Replace this placeholder with your real project details.
+            </p>
+            <div class="tech-tags">
+              <span>PHP</span>
+              <span>MySQL</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="projects-more">
+        <a
+          href="https://github.com/MERDOKYOS/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-outline"
+        >View All on GitHub &rarr;</a>
       </div>
     </section>
+    <!-- /Projects Section -->
 
-    <!-- Contact -->
-    <section id="contact">
-      <h1 class="title">Contact</h1>
-      <div id="container">
+    <!-- ===== EDUCATION SECTION ===== -->
+    <section id="education" data-aos="fade-up">
+      <div class="section-header">
+        <h1 class="title">Education</h1>
+        <p class="section-subtitle">My academic background</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">2022 &ndash; Present</span>
+              <span class="timeline-badge">Current</span>
+            </div>
+            <h3>Bachelor of Science &mdash; Software Engineering</h3>
+            <h4>University &middot; Bahir Dar, Ethiopia</h4>
+            <p>
+              Focused on full-stack development, algorithms, databases, and software
+              architecture. Relevant coursework includes Data Structures, Web
+              Technologies, Database Management Systems, Operating Systems, and
+              Software Project Management.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Education Section -->
+
+    <!-- ===== EXPERIENCE SECTION ===== -->
+    <section id="experience" data-aos="fade-up">
+      <div class="section-header">
+        <h1 class="title">Experience</h1>
+        <p class="section-subtitle">What I've been working on</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">2024 &ndash; Present</span>
+              <span class="timeline-badge">Freelance</span>
+            </div>
+            <h3>Freelance Web Developer &amp; Designer</h3>
+            <h4>Self-Employed &middot; Remote</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Designed and developed
+              responsive websites for clients, focusing on clean user interfaces,
+              mobile-first layouts, and optimized performance.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">2023</span>
+              <span class="timeline-badge">Internship</span>
+            </div>
+            <h3>Frontend Developer Intern</h3>
+            <h4>Company Name &middot; Bahir Dar, Ethiopia</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim
+              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Contributed to building and maintaining web interfaces,
+              collaborating with senior developers on live projects.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Experience Section -->
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact" data-aos="fade-up">
+      <div class="section-header">
+        <h1 class="title">Contact</h1>
+        <p class="section-subtitle">Let's build something great together</p>
+      </div>
+
+      <div id="contact-container">
         <div class="left">
-          <form action="">
-            <label for="name">Your Name:</label> <br />
-            <input type="text" placeholder="Name" /><br />
-            <label for="email">Your Email:</label><br />
-            <input type="email" placeholder="Email" /><br />
-            <label for="message">Your Message:</label><br />
-            <textarea type="text" row="4" placeholder="Message"></textarea
-            ><br />
-            <button class="btn" type="submit">Send Message</button>
+          <!--
+            HOW TO ACTIVATE THE CONTACT FORM:
+            1. Go to https://formspree.io and create a free account.
+            2. Create a new form and copy your form ID.
+            3. Replace YOUR_FORMSPREE_ID below with your real form ID.
+            Example: action="https://formspree.io/f/abcdefgh"
+          -->
+          <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" id="contactForm" novalidate>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Name" required />
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email" required />
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Message" required></textarea>
+
+            <button class="btn btn-primary" type="submit">Send Message</button>
+            <p class="form-status" id="formStatus" aria-live="polite"></p>
           </form>
         </div>
+
         <div class="right">
           <h3>Get In Touch</h3>
           <p>
-            Got a project in mind , I’m always excited to connect, share ideas,
+            Got a project in mind? I'm always excited to connect, share ideas,
             and create together.
           </p>
-          <div class="first">
+
+          <div class="contact-items">
             <div class="item">
-              <div class="img-con">
+              <div class="img-con" aria-hidden="true">
                 <img
-                  width="25px"
-                  height="25px"
+                  width="22"
+                  height="22"
                   src="https://img.icons8.com/ios-filled/50/000000/phone.png"
-                  alt="Phone Icon"
+                  alt=""
                 />
               </div>
-
               <div class="getin">
                 <h3>Call Me</h3>
-                <p>+251900901325</p>
+                <p><a href="tel:+251900901325">+251 900 901 325</a></p>
               </div>
             </div>
-            <div class="item">
-              <div class="img-con">
-                <img width=25px" height="25px"
-                src="https://img.icons8.com/ios-filled/50/000000/new-post.png"
-                alt="Email Icon" />
-              </div>
 
+            <div class="item">
+              <div class="img-con" aria-hidden="true">
+                <img
+                  width="22"
+                  height="22"
+                  src="https://img.icons8.com/ios-filled/50/000000/new-post.png"
+                  alt=""
+                />
+              </div>
               <div class="getin">
                 <h3>Email Me</h3>
                 <p>
-                  <a
-                    href="mailto:surafelsm894@gmail.com?subject=Hello%20Merde&body=I%20saw%20your%20portfolio"
-                    >surafelsm894@gmail.com</a
-                  >
+                  <a href="mailto:surafelsm894@gmail.com?subject=Hello%20Merde&body=I%20saw%20your%20portfolio">
+                    surafelsm894@gmail.com
+                  </a>
                 </p>
               </div>
             </div>
+
             <div class="item">
-              <div class="img-con">
+              <div class="img-con" aria-hidden="true">
                 <img
-                  width="25px"
-                  height="25px"
+                  width="22"
+                  height="22"
                   src="https://img.icons8.com/ios-filled/50/000000/marker.png"
-                  alt="Location Icon"
+                  alt=""
                 />
               </div>
               <div class="getin">
@@ -237,15 +484,15 @@
                   <a
                     href="https://maps.app.goo.gl/urEMgnKLo8v9vDk76"
                     target="_blank"
-                    >Bahirdar, saint george, poly</a
-                  >
+                    rel="noopener noreferrer"
+                  >Bahir Dar, Saint George, Poly</a>
                 </p>
               </div>
             </div>
           </div>
+
           <h4>Follow Me On</h4>
           <div class="social-icons">
-            <!-- Telegram -->
             <a
               href="https://t.me/MERDOKYOS_S"
               target="_blank"
@@ -257,7 +504,6 @@
                 alt="Telegram"
               />
             </a>
-            <!-- GitHub -->
             <a
               href="https://github.com/MERDOKYOS/"
               target="_blank"
@@ -269,8 +515,6 @@
                 alt="GitHub"
               />
             </a>
-
-            <!-- LinkedIn -->
             <a
               href="https://www.linkedin.com/in/merdokyos-sm-b76a8a341/"
               target="_blank"
@@ -286,15 +530,24 @@
         </div>
       </div>
     </section>
+    <!-- /Contact Section -->
+
+    <!-- ===== FOOTER ===== -->
     <footer>
       <div class="copyright">
         <p>
-          © <span>Copyright</span>
+          &copy; <span id="footer-year"></span>
           <strong class="sitename">MERDE</strong>
-          <span>All Rights Reserved</span>
+          &mdash; All Rights Reserved
         </p>
       </div>
     </footer>
+
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <!-- Main Script -->
     <script src="script.js"></script>
   </body>
 </html>
